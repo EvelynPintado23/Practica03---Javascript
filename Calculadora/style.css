@@ -1,6 +1,9 @@
 /*aspectos generales: bordes y color de fondo de calculadora*/ 
-.calculadora { border: 3px blue ridge; width: 250px;text-align: center;
-    background-color: #f6f8d8; }
+/*.calculadora { border: 5px whitesmoke; width: 300px; text-align: center;
+    background-color: orangered }*/
+
+.calculadora { border: 5px whitesmoke; width: 300px; justify-content: center;
+    background-color: orangered }
 
 /*pantalla de visualización: bordes, posición, color de fondo, estilo letra.*/ 					 
 #textoPantalla { width: 185px; border: 2px black solid; text-align: right; 
