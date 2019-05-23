@@ -134,6 +134,8 @@ https://github.com/EvelynPintado23/Practica03---Javascript.git
  
 
  
+Link Repositorio Git: 
+https://github.com/EvelynPintado23/ControlGaleria.git 
 
 6. En el archivo README del repositorio debe constar la misma información del informe de resultados de la
 práctica que se indica en el punto anterior.
@@ -146,4 +148,4 @@ RECOMENDACIONES:
 
 
 
-Docente: Evelyn Pintado Ch.                                                                                                                              Firma:  
+Estudiante : Evelyn Pintado Ch.                                                                                                                              Firma:  
