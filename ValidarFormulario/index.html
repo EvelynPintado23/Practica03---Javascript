@@ -1,57 +1,63 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" rel="stylesheet">
-    <script type="text/javascript" src="js/validacion.js"></script>
-    <title>Crear usuario</title>
+    <script type="text/javascript" src="funciones.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        .error {
+            color: red;
+            font-size: 8px;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1 class="tittle">Gestion de usuarios</h1>
-        <div class="menu">
-            <nav>
-                <ul>
-                    <li><a href="#">Rgistro</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="user">
-            <a href='#'>Iniciar Sesion</a>
-        </div>
-    </header>
-    <section>
-        <div class="formulario">
-            <h2>Registro</h2>
-            <form method="POST" onsubmit="return validarCamposObligatorios()">
-                <label for="cedula">Cedula</label>
-                <span id="error"></span>
-                <input type="text" name="cedula" id="cedula">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" onkeypress="validarLetras(this)">
-                <span id="errorletras"></span>
-                <label for="apellido">Apellido</label>
-                <input type="text" name="apellido" id="apellido">
-                <label for="direccion">Direccion</label>
-                <input type="text" name="direccion" id="direccion">
-                <label for="telefono">Telefono</label>
-                <input type="text" name="telefono" id="telefono">
-                <label for="fechaNac">Fecha de nacimiento</label>
-                <input type="date" name="fechaNac" id="fechaNac">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email">
-                <label for="pass">Contraseña</label>
-                <input type="password" name="pass" id="pass">
-                <label for="cpass">Confirmar Contraseña</label>
-                <input type="password" name="cpass" id="cpass">
+    <div class="titulo">
+        <h1>Validación Formulario</h1>
+    </div>
 
-                <input type="submit" value="Crear">
-            </form>
-        </div>
-    </section>
+    <form id="formulario01" method="POST" action="pase.php"
+        onsubmit="return validarCamposObligatorio() && validarCedula() && validar2Nombres() && validar2Apellidos() && validarFecha() && validarCorreo()">
+        <label for="cedula">Cedula (*)</label>
+        <input type="text" id="cedula" name="cedula" value="" placeholder="Ingrese el número de cedula ..."
+            onkeyup="return validarNumerosCed(this)" />
+        <span id="mensajeCedula" class="error"> </span>
+
+    
+        <label for="nombres">Nombres (*)</label>
+        <input type="text" id="nombres" name="nombres" value="" placeholder="Ingrese sus dos nombres
+..." onkeyup="return validarLetrasNom(this)" />
+        <span id="mensajeNombre" class="error"> </span>
+    
+        <label for="apellidos">Apelidos (*)</label>
+        <input type="text" id="apellidos" name="apellidos" value="" placeholder="Ingrese sus dos apellidos
+..." onkeyup="return validarLetrasApe(this)" />
+        <span id="mensajeApellido" class="error"> </span>
+    
+        <label for="direccion">Dirección (*)</label>
+        <input type="text" id="direccion" name="direccion" value="" placeholder="Ingrese su dirección ..." />
+        <span id="mensajeDireccion" class="error"> </span>
+    
+        <label for="telefono">Teléfono (*)</label>
+        <input type="text" id="telefono" name="telefono" value="" placeholder="Ingrese su número telefónico
+..." onkeyup="return validarNumerosTel(this)" />
+        <span id="mensajeTelefono" class="error"> </span>
+    
+        <label for="fecha">Fecha Nacimiento (*)</label>
+        <input type="text" id="fechaNacimiento" name="fechaNacimiento" value="" placeholder="dd/mm/yyyy" />
+        <span id="mensajeFecha" class="error"> </span>
+    
+        <label for="correo">Correo electrónico (*)</label>
+        <input type="text" id="correo" name="correo" value="" placeholder="Ingrese su correo electrónico
+..." />
+        <span id="mensajeCorreo" class="error"> </span>
+    
+
+        <input type="submit" id="crear" name="crear" value="Aceptar" class="boto"/>
+        <input type="reset" id="cancelar" name="cancelar" value="Cancelar" class="boto" />
+    </form>
 </body>
 
 </html>
